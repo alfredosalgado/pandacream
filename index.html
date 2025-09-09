@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panda Cream - Heladería Artesanal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Panda Cream Logo">
+                <h1>Panda Cream</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h2>🐼 Panda Cream</h2>
+            <p class="hero-subtitle">🍦 Heladería Artesanal</p>
+            <p class="hero-description">"El lugar perfecto para endulzar tus días"</p>
+            <div class="hero-features">
+                <span>🧇 Waffles</span>
+                <span>🥤 Milkshakes</span>
+                <span>🧋 Jugos Naturales</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos Section -->
+    <section id="productos" class="productos">
+        <div class="container">
+            <h2 class="section-title">Nuestros Productos</h2>
+            <div class="productos-grid" id="productosGrid">
+                <!-- Los productos se cargarán dinámicamente con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería Section -->
+    <section id="galeria" class="galeria">
+        <div class="container">
+            <h2 class="section-title">Nuestro Local</h2>
+            <div class="galeria-grid">
+                <div class="galeria-item">
+                    <img src="img/1.jpg" alt="Interior del local" loading="lazy">
+                </div>
+                <div class="galeria-item">
+                    <img src="img/2.jpg" alt="Ambiente acogedor" loading="lazy">
+                </div>
+                <div class="galeria-item">
+                    <img src="img/3.jpg" alt="Zona de preparación" loading="lazy">
+                </div>
+                <div class="galeria-item">
+                    <img src="img/4.jpg" alt="Decoración del local" loading="lazy">
+                </div>
+                <div class="galeria-item">
+                    <img src="img/5.jpg" alt="Vista general" loading="lazy">
+                </div>
+                <div class="galeria-item">
+                    <img src="img/6.jpg" alt="Detalles del local" loading="lazy">
+                </div>
+                <div class="galeria-item">
+                    <img src="img/niñawaffleencono.jpg" alt="Cliente disfrutando" loading="lazy">
+                </div>
+                <div class="galeria-item">
+                    <img src="img/variedades.jpg" alt="Variedad de productos" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section id="contacto" class="contacto">
+        <div class="container">
+            <h2 class="section-title">Visítanos</h2>
+            <div class="contacto-content">
+                <div class="horarios">
+                    <h3>⏰ Horarios</h3>
+                    <p>Lunes a Domingos</p>
+                </div>
+                <div class="ubicaciones">
+                    <h3>📍 Nuestras Ubicaciones</h3>
+                    <ul>
+                        <li>Mall Paseo del Valle - Quillota</li>
+                        <li>O'Higgins 150 - Quillota</li>
+                        <li>Manuel Rodríguez #1603 - Hijuelas</li>
+                        <li>Av. Blanco #925 - Quilpué</li>
+                        <li>21 de Mayo #565 - Santiago</li>
+                        <li>Freiré #504, Local 8 - San Bernardo</li>
+                    </ul>
+                </div>
+                <div class="redes-sociales">
+                    <h3>Síguenos</h3>
+                    <div class="social-links">
+                        <a href="https://api.whatsapp.com/send/?phone=56982081089&text&type=phone_number&app_absent=0" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=100088230104092" target="_blank">
+                            <i class="fab fa-facebook"></i> Facebook
+                        </a>
+                        <a href="https://www.instagram.com/pandacream.cl/" target="_blank">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Panda Cream - Heladería Artesanal. Todos los derechos reservados.</p>
+            <p>pandacream.cl</p>
+        </div>
+    </footer>
+
+    <!-- Modal para imágenes -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -80,6 +80,9 @@
                 <div class="galeria-item">
                     <img src="img/variedades.jpg" alt="Variedad de productos" loading="lazy">
                 </div>
+                <div class="galeria-item">
+                    <img src="img/vitrina.jpg" alt="Vitrina del local" loading="lazy">
+                </div>
             </div>
         </div>
     </section>
@@ -100,9 +103,27 @@
                         <li>O'Higgins 150 - Quillota</li>
                         <li>Manuel Rodríguez #1603 - Hijuelas</li>
                         <li>Av. Blanco #925 - Quilpué</li>
-                        <li>21 de Mayo #565 - Santiago</li>
+                        <li class="ubicacion-destacada">21 de Mayo #565 - Santiago</li>
                         <li>Freiré #504, Local 8 - San Bernardo</li>
                     </ul>
+                    
+                    <!-- Mapa de Santiago -->
+                    <div class="mapa-container">
+                        <h4>📍 Encuéntranos en Santiago</h4>
+                        <div class="mapa-wrapper">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.6789123456789!2d-70.65063!3d-33.43722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5a5a5a5a5a5%3A0x5a5a5a5a5a5a5a5a!2s21%20de%20Mayo%20565%2C%20Santiago%2C%20Regi%C3%B3n%20Metropolitana%2C%20Chile!5e0!3m2!1ses!2scl!4v1703123456789!5m2!1ses!2scl" 
+                                width="100%" 
+                                height="200" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Ubicación Panda Cream Santiago - 21 de Mayo #565">
+                            </iframe>
+                        </div>
+                        <p class="direccion-completa">21 de Mayo #565, Santiago Centro</p>
+                    </div>
                 </div>
                 <div class="redes-sociales">
                     <h3>Síguenos</h3>
@@ -133,6 +154,49 @@
             <p>pandacream.cl</p>
         </div>
     </footer>
+
+    <!-- Botón flotante QR -->
+    <button id="qr-float-btn" class="qr-float-btn" title="Ver QR">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="3" width="8" height="8" rx="1" stroke="currentColor" stroke-width="2"/>
+            <rect x="13" y="3" width="8" height="8" rx="1" stroke="currentColor" stroke-width="2"/>
+            <rect x="3" y="13" width="8" height="8" rx="1" stroke="currentColor" stroke-width="2"/>
+            <rect x="13" y="13" width="3" height="3" fill="currentColor"/>
+            <rect x="17" y="13" width="4" height="3" fill="currentColor"/>
+            <rect x="13" y="17" width="8" height="4" fill="currentColor"/>
+        </svg>
+    </button>
+
+    <!-- Modal QR -->
+    <div id="qr-modal" class="qr-modal">
+        <div class="qr-modal-content">
+            <span class="qr-close">&times;</span>
+            <h3>Código QR</h3>
+            <div class="qr-container">
+                <img id="qr-image" src="qr.png" alt="Código QR" />
+            </div>
+            <div class="qr-actions">
+                <button id="download-qr" class="qr-btn qr-btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <polyline points="7,10 12,15 17,10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line x1="12" y1="15" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    Descargar
+                </button>
+                <button id="share-qr" class="qr-btn qr-btn-secondary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="18" cy="5" r="3" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="6" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="18" cy="19" r="3" stroke="currentColor" stroke-width="2"/>
+                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" stroke="currentColor" stroke-width="2"/>
+                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    Compartir
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Modal para imágenes -->
     <div id="imageModal" class="modal">

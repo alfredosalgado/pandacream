@@ -289,3 +289,107 @@ document.addEventListener('touchend', (e) => {
     }
     lastTouchEnd = now;
 }, false);
+
+// Funcionalidad del botón flotante QR
+const qrFloatBtn = document.getElementById('qr-float-btn');
+const qrModal = document.getElementById('qr-modal');
+const qrClose = document.querySelector('.qr-close');
+const downloadBtn = document.getElementById('download-qr');
+const shareBtn = document.getElementById('share-qr');
+const qrImage = document.getElementById('qr-image');
+
+// Abrir modal QR
+if (qrFloatBtn) {
+    qrFloatBtn.addEventListener('click', function() {
+        qrModal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    });
+}
+
+// Cerrar modal QR
+if (qrClose) {
+    qrClose.addEventListener('click', function() {
+        qrModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    });
+}
+
+// Cerrar modal al hacer clic fuera
+if (qrModal) {
+    qrModal.addEventListener('click', function(e) {
+        if (e.target === qrModal) {
+            qrModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+}
+
+// Función para descargar QR
+if (downloadBtn) {
+    downloadBtn.addEventListener('click', function() {
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        const img = new Image();
+        
+        img.onload = function() {
+            canvas.width = img.width;
+            canvas.height = img.height;
+            ctx.drawImage(img, 0, 0);
+            
+            // Crear enlace de descarga
+            const link = document.createElement('a');
+            link.download = 'pandacream-qr.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        };
+        
+        img.src = qrImage.src;
+    });
+}
+
+// Función para compartir QR
+if (shareBtn) {
+    shareBtn.addEventListener('click', async function() {
+        if (navigator.share) {
+            try {
+                // Convertir imagen a blob para compartir
+                const response = await fetch(qrImage.src);
+                const blob = await response.blob();
+                const file = new File([blob], 'pandacream-qr.png', { type: 'image/png' });
+                
+                await navigator.share({
+                    title: 'Código QR - Panda Cream',
+                    text: 'Escanea este código QR para acceder a nuestro catálogo',
+                    files: [file]
+                });
+            } catch (error) {
+                console.log('Error al compartir:', error);
+                fallbackShare();
+            }
+        } else {
+            fallbackShare();
+        }
+    });
+}
+
+// Función alternativa para compartir (copiar enlace)
+function fallbackShare() {
+    const url = window.location.href;
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(url).then(() => {
+            alert('Enlace copiado al portapapeles');
+        }).catch(() => {
+            prompt('Copia este enlace:', url);
+        });
+    } else {
+        prompt('Copia este enlace:', url);
+    }
+}
+
+// Cerrar modal QR con tecla Escape
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && qrModal && qrModal.style.display === 'block') {
+        qrModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+});
